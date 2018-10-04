@@ -1,9 +1,7 @@
 package edu.nyu.pqs1;
 
-
 /**
 *  For an entry, field name is required not empty, other fields like postalAdd can be empty.
-* 
 * @author Lin Dongxu(Damien)
 **/
 public class Entry {
@@ -19,10 +17,9 @@ public class Entry {
    * inner Builder class for constructing an entry
    */
   public static class Builder{
-	
 	//field name required 
     private final String name;
-	
+    
 	//these fields are optional
     private String postalAdd = "";
     private String phoneNum = "";
@@ -108,14 +105,12 @@ public class Entry {
 	note = builder.note;
   }
 
-
   /**
    * @return name of the entry
    */
   public String getName() {
     return name;
   }
-
 
   /**
    * @return postal address of the entry
@@ -124,14 +119,12 @@ public class Entry {
     return postalAdd;
   }
 
-
   /**
    * @return phone number of the entry
    */
   public String getPhoneNum() {
     return phoneNum;
   }
-
 
   /**
    * @return email address of the entry
@@ -140,14 +133,12 @@ public class Entry {
     return emailAdd;
   }
 
-
   /**
    * @return note of the entry
    */
   public String getNote() {
     return note;
   }
-
 
   /**
    * @return raw string of the entry
@@ -182,5 +173,4 @@ public class Entry {
     return this.toString().equals(obj.toString());
   }
 }
-
 
