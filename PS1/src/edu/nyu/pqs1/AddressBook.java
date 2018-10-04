@@ -11,7 +11,8 @@ import java.util.Scanner;
 
 
 /**
-* This class is a address book. A address book contains a list of entries.
+* This class is a address book. A address book contains a list of entries. The class provide method of
+* creating a addressbook, adding/removing an entry, searching for entry, save/read address book to file.
 * @author Lin Dongxu(Damien)
 */
 public class AddressBook{
@@ -26,7 +27,7 @@ public class AddressBook{
   }
 	
   /**
-  * add an entry into the address book.
+  * add an entry into the address book. The address book can contain multiple same entry.
   * 
   * @param an Entry e
   * @return true when it add successfully, return false if the input entry is null or add unsuccessfully.
@@ -43,7 +44,8 @@ public class AddressBook{
    * only remove one of them.
    * 
    * @param an Entry e
-   * @return true if it remove successfully, return false if the input entry is null or removes unsuccessfully.
+   * @return true if it remove successfully, return false if the input entry is null or the entry does
+   *  not exist in address book.
    */
   public boolean removeEntry(Entry e) {
   	if (e == null) {
@@ -107,7 +109,7 @@ public class AddressBook{
   /**
    * This method read local file named fileName, then it will overwrite the address book with new data.
    * @param fileName
-   * @throws FileNotFoundException
+   * @throws FileNotFoundException if the file does not exist
    */
   public void readAddressBook(String fileName) throws FileNotFoundException {
   	Scanner scanner = new Scanner( new File(fileName) );
