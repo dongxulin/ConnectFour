@@ -7,6 +7,7 @@ package edu.nyu.pqs1;
 * @author Lin Dongxu(Damien)
 **/
 public class Entry {
+  
   private final String name;
   private final String postalAdd;
   private final String phoneNum;
