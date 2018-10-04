@@ -84,26 +84,26 @@ public class AddressBook{
    * @throws IOException
    */
   public boolean saveAddressBook(String fileName) throws IOException{
-      StringBuilder sb = new StringBuilder();
-      sb.append("name|postal|phone|email|note").append("\n");
-      for (Entry e: entries) {
-        sb.append(e.getName()).append("|");
-      	sb.append(e.getPostalAdd()).append("|");
-      	sb.append(e.getPhoneNum()).append("|");
-      	sb.append(e.getEmailAdd()).append("|");
-      	sb.append(e.getNote()).append("|");
-      	sb.append("\n");
-      }
+    StringBuilder sb = new StringBuilder();
+    sb.append("name|postal|phone|email|note").append("\n");
+    for (Entry e: entries) {
+      sb.append(e.getName()).append("|");
+      sb.append(e.getPostalAdd()).append("|");
+      sb.append(e.getPhoneNum()).append("|");
+      sb.append(e.getEmailAdd()).append("|");
+      sb.append(e.getNote()).append("|");
+      sb.append("\n");
+    }
       
-      File f = new File(fileName);
-      if(f.exists() && !f.isDirectory()) { 
-      	return false;
-      }
+    File f = new File(fileName);
+    if(f.exists() && !f.isDirectory()) { 
+      return false;
+    }
       
-      PrintStream out = new PrintStream(new FileOutputStream(fileName));
-      out.print(sb.toString());
-      out.close();
-      return true;
+    PrintStream out = new PrintStream(new FileOutputStream(fileName));
+    out.print(sb.toString());
+    out.close();
+    return true;
   }
   
   /**
