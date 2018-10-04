@@ -35,69 +35,69 @@ public class Entry {
 	 * @param name which cannot be NULL
 	 * @throws IllegalArgumentException if input name is NULL
 	 */
-	public Builder(String name) {
-	  if (name == null) {
-	    throw new IllegalArgumentException("name cannot be NULL");
-	  }else {
-	    this.name = name;
-	  }
+    public Builder(String name) {
+      if (name == null) {
+        throw new IllegalArgumentException("name cannot be NULL");
+      }else {
+        this.name = name;
+      }
 	}
 	
 	/**
 	 * @param postal address value. If input is NULL, do nothing.
 	 * @return updated Builder object.
 	 */
-	public Builder setPostal(String val) {
-	  if (val == null) {
-	    return this;
-	  }
-	  postalAdd = val;
-	  return this;
-	}
+    public Builder setPostal(String val) {
+      if (val == null) {
+        return this;
+      }
+      postalAdd = val;
+      return this;
+    }
 	
 	/**
 	 * The method eliminates all not digit character then update the builder.
 	 * @param phone number. If input is NULL, do nothing.
 	 * @return updated Builder object.
 	 */
-	public Builder setPhone(String num) {
-	  if (num == null) {
+    public Builder setPhone(String num) {
+      if (num == null) {
         return this;
       }
-	  phoneNum = num.replaceAll("[\\s-()]", "");
-	  return this;
-	}
+      phoneNum = num.replaceAll("[\\s-()]", "");
+      return this;
+    }
 	
 	/**
 	 * @param email address value. If input is NULL, do nothing.
 	 * @return updated Builder object.
 	 */
-	public Builder setEmail(String val) {
-	  if (val == null) {
+    public Builder setEmail(String val) {
+      if (val == null) {
         return this;
       }
-	  emailAdd = val;
-	  return this;
-	}
+      emailAdd = val;
+      return this;
+    }
 	
 	/**
 	 * @param note value. If input is NULL, do nothing.
 	 * @return updated Builder object.
 	 */
-	public Builder setNote(String val) {
-	  if (val == null) {
+    public Builder setNote(String val) {
+      if (val == null) {
         return this;
       }
-	  note = val;
-	  return this;
-	}
+      note = val;
+      return this;
+    }
 
 	/**
 	 * @return new Entry object
 	 */
-	public Entry build() {
-	  return new Entry(this);
-	}
+    public Entry build() {
+      return new Entry(this);
+    }
   }
 
   private Entry(Builder builder) {
@@ -113,7 +113,7 @@ public class Entry {
    * @return name of the entry
    */
   public String getName() {
-	return name;
+    return name;
   }
 
 
@@ -121,7 +121,7 @@ public class Entry {
    * @return postal address of the entry
    */
   public String getPostalAdd() {
-	return postalAdd;
+    return postalAdd;
   }
 
 
@@ -129,7 +129,7 @@ public class Entry {
    * @return phone number of the entry
    */
   public String getPhoneNum() {
-	return phoneNum;
+    return phoneNum;
   }
 
 
@@ -137,7 +137,7 @@ public class Entry {
    * @return email address of the entry
    */
   public String getEmailAdd() {
-	return emailAdd;
+    return emailAdd;
   }
 
 
@@ -145,7 +145,7 @@ public class Entry {
    * @return note of the entry
    */
   public String getNote() {
-	return note;
+    return note;
   }
 
 
@@ -153,7 +153,7 @@ public class Entry {
    * @return raw string of the entry
    */
   public String getEntryString() {
-	return name + "|" + postalAdd + "|" + phoneNum + "|" + emailAdd + "|" + note;
+    return name + "|" + postalAdd + "|" + phoneNum + "|" + emailAdd + "|" + note;
   }
 
   @Override
@@ -164,8 +164,8 @@ public class Entry {
 
   @Override
   public int hashCode() {
-	int result = 17;
-	int prime = 31;
+    int result = 17;
+    int prime = 31;
     result = prime * result + name.hashCode();
     result = prime * result + postalAdd.hashCode();
     result = prime * result + phoneNum.hashCode();
@@ -176,10 +176,10 @@ public class Entry {
 
   @Override
   public boolean equals(Object obj) {
-	if (obj.getClass() != this.getClass()) {
-	  return false;
-	}
-	return this.toString().equals(obj.toString());
+    if (obj.getClass() != this.getClass()) {
+      return false;
+    }
+    return this.toString().equals(obj.toString());
   }
 }
 

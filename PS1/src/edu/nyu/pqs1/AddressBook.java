@@ -34,7 +34,7 @@ public class AddressBook{
   */
   public boolean addEntry(Entry e) {
     if (e == null) {
-	  return false;
+      return false;
     }
     return entries.add(e);
   }
@@ -48,10 +48,10 @@ public class AddressBook{
    *  not exist in address book.
    */
   public boolean removeEntry(Entry e) {
-  	if (e == null) {
-  	  return false;
+    if (e == null) {
+      return false;
   	}
-  	return entries.remove(e);
+    return entries.remove(e);
   }
   
   /**
@@ -63,16 +63,16 @@ public class AddressBook{
    * return an empty list.
    */
   public List<Entry> searchEntry(String str) {
-  	List<Entry> resList = new ArrayList<Entry>();
-  	if (str == null) {
-  	  return resList;
-  	}
-  	for (Entry e: entries) {
-  	  if (e.getEntryString().contains(str)) {
-  	    resList.add(e);
-  	  }
-  	}
-  	return resList;
+    List<Entry> resList = new ArrayList<Entry>();
+    if (str == null) {
+      return resList;
+    }
+    for (Entry e: entries) {
+      if (e.getEntryString().contains(str)) {
+        resList.add(e);
+      }
+    }
+    return resList;
   }
   
   
@@ -112,30 +112,29 @@ public class AddressBook{
    * @throws FileNotFoundException if the file does not exist
    */
   public void readAddressBook(String fileName) throws FileNotFoundException {
-  	Scanner scanner = new Scanner( new File(fileName) );
-  	String text = scanner.useDelimiter("\\A").next();
-  	scanner.close();
-  	
-  	String[] lines = text.split("\n");
-  	if (lines.length > 1) {
-  	  entries = new ArrayList<Entry>();
-  	  for (int i = 1; i < lines.length; i++) {
-  	    String[] item = lines[i].split("\\|", -1);
-		entries.add(new Entry.Builder(item[0]).setPostal(item[1]).setPhone(item[2])
-		    .setEmail(item[3]).setNote(item[4]).build());
-  	  }
+    Scanner scanner = new Scanner( new File(fileName) );
+    String text = scanner.useDelimiter("\\A").next();
+    scanner.close();
+	
+    String[] lines = text.split("\n");
+    if (lines.length > 1) {
+      entries = new ArrayList<Entry>();
+      for (int i = 1; i < lines.length; i++) {
+        String[] item = lines[i].split("\\|", -1);
+        entries.add(new Entry.Builder(item[0]).setPostal(item[1]).setPhone(item[2])
+            .setEmail(item[3]).setNote(item[4]).build());
+      }
+     }
   	}
-  	
-  }
   
   
   @Override
   public String toString() {
-  	StringBuilder sb = new StringBuilder();
-  	sb.append("name|postal|phone|email|note").append("\n");
-  	for (Entry e: entries) {
-  	  sb.append(e.getEntryString()).append("\n");
-  	}
-  	return sb.toString();
+    StringBuilder sb = new StringBuilder();
+    sb.append("name|postal|phone|email|note").append("\n");
+    for (Entry e: entries) {
+      sb.append(e.getEntryString()).append("\n");
+    }
+    return sb.toString();
   }
 }
