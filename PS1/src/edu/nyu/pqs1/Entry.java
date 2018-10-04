@@ -150,7 +150,7 @@ public class Entry {
   @Override
   public String toString() {
     return "Name: " + name + "|" + "postal address: " + postalAdd + "|" + "phone numer: " + phoneNum
-			+ "|" + "email address: " + emailAdd + "|" + "note: " + note;
+        + "|" + "email address: " + emailAdd + "|" + "note: " + note;
   }
 
   @Override
