@@ -16,8 +16,6 @@ In AddressBook.java:
 In Entry.java:
 1. missing javadoc for getName, getAddress, etc methods. For example in line 140. It need to say what will return if that field is empty.
 
-2. In the beginning, the javadoc said this is an immutable class, so the variable should have final key word. 
-
-3. missing hashCode and equals method.
+2. missing hashCode and equals method.
 
 
