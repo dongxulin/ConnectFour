@@ -6,16 +6,20 @@ import java.util.List;
 import edu.nyu.pqs.stopwatch.api.Stopwatch;
 
 /**
- * StopwatchImplement is thread-safe actual implementation of the Stopwatch interface. A Stopwatch can
- * start, stop, reset, lap. 
+ * StopwatchImplement is thread-safe actual implementation of the Stopwatch interface. 
+ * A Stopwatch can start, stop, reset, lap. To construct a stopwatch, an id is required.
  * @author Dongxu Lin
  */
 public class StopwatchImplement implements Stopwatch{
-  
+ 
   private final String id;
+  
+//  the field to store the previous time for calculating time interval
   private long previousLapTime;
-  private List<Long> lapList;
   private boolean isRunning;
+  
+//  the list to store time interval
+  private List<Long> lapList;
   private Object lock = new Object();
   
   
@@ -58,7 +62,8 @@ public class StopwatchImplement implements Stopwatch{
   }
   
   /**
-   * Stops the stopwatch (and records one final lap).
+   * Stores the time elapsed since the last time lap() was called
+   * or since start() was called if this is the first lap.
    * @throws IllegalStateException thrown when the stopwatch isn't running
    */
   @Override
