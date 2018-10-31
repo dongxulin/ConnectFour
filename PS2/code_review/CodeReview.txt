@@ -1,2 +1,23 @@
 Please enter your code review in this file as plain text
 and make sure to include it when you commit your project.
+
+In AddressBook.java:
+
+1. In the address book class, there is a lot of repeated code/method, like nameContainAll,  addContainAll, noteContainAll, etc. 
+
+2. the javadoc for private method in address book class make it confusing, because as user of the library, we don’t really care the input parameter for private helper method
+
+3. for the insertEntry and remove method, the method do not handle the situation that the input entry is null, and the javadoc does not say anything.
+
+4.for the load method, it catches 2 exception, one is IOException, one is ParseException, and the try block is so wide that we don’t know in which line we could have which exception. It should narrow down to the code may raise exception.
+
+5.If there is a toString method to list all the entry in the address book, it may be helpful.
+
+In Entry.java:
+1. missing javadoc for getName, getAddress, etc methods. For example in line 140. It need to say what will return if that field is empty.
+
+2. In the beginning, the javadoc said this is an immutable class, so the variable should have final key word. 
+
+3. missing hashCode and equals method.
+
+
