@@ -15,6 +15,7 @@ import edu.nyu.pqs.stopwatch.api.Stopwatch;
  */
 public class StopwatchFactory {
   private static Map<String, Stopwatch> stopwatchMap = new HashMap<>();
+  
   /**
    * Creates and returns a new Stopwatch object
    * @param id The identifier of the new object
