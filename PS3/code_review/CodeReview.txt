@@ -1,2 +1,66 @@
 Please enter your code review in this file as plain text
 and make sure to include it when you commit your project.
+
+In AddressBook.java
+1. line 24, instead of using a specific class hashmap in the front, it is better to use a interface map to do this, like Map<Integer,Contact> addressList, which give us more flexibility.
+
+2. It will look better if the author give one or two empty space between methods.
+
+3.line 24, the list should be private for safety.
+
+4. there should be space in both side of “=“ “+”, like in line 53,54,60. The author make no space.
+
+5.some method does not handle the null case, and the javadoc does not mention this. like 
+line 91, the remove method.
+
+6.for the search method, it is better to use string as input argument rather than a contact.
+
+7. it looks like using a hashmap for storing the contact does not make sense, the author does not tell what is the mapping relation here. A list can be used.
+
+8.the toString method can be improved. It is good for debugging if it list all the contacts inside.
+
+9.It may make sense to have equal and hashcode.
+
+
+
+In Contact.java
+
+1. some variable may need better naming, like ContactBuilder c, c is not a good name for a builder.
+
+2. missing javadoc for public method like equal and toString.
+
+3.some method cannot handle case that input is null
+
+4. in line 67, getNumber method, instead of returning a null, it is better to return an empty string. because a null returned is more error prone.
+
+5. in line 91, the constructor is redundant.
+
+6. it is better to explain the difference between weak equals and equals using javadoc
+
+
+
+In GeneralUtils.java
+
+1. there are a lot of repeated code. like line 43, 51, 59. This can be write into a single method and call several times.
+
+2. the try catch block is too wide in line 85, line 132, it is better to narrow down to the code where exception may happen and separate 2 kinds of exception.
+
+3. the exportAddressBook method always return -1, in line 91,  which is confusing. It is better to return 1 if successful, -1 if fail.
+
+4. in line 93, the return type of the method should be better set to map, instead of hash map. 
+
+5. there is computer generated comment in line 86
+
+6. in line 82, there are debug code which is comment out, it is not good for writing library.   // StreamResult result = new StreamResult(System.out);
+
+
+
+In PhoneNumber.java
+
+1. if this class is just a string, we can do it using a string type for phone number, this class looks redundant.
+
+2. it override equals method without overriding hashcode method.
+
+
+
+
